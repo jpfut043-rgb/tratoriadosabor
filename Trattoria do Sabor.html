@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trattoria do Sabor – Restaurante & Pizzaria em Canoas</title>
+<meta name="description" content="Buffet livre ao meio-dia e rodízio de pizza à noite, de segunda a sábado, no Igara, em Canoas/RS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dosis:wght@400;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vinho:#5a2a1c; --madeira:#3a1a10; --blush:#f3dcd3; --trigo:#e8cfae;
+  --verde:#2f6b3a; --rubi:#a8281f; --papel:#fffaf6; --texto:#3a2219; --suave:#7a5a4e;
+  --bg:var(--papel); --card:#fff; --linha:#e7d3c8;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1d0e09; --card:#2a1710; --linha:#4a2c20; --texto:#f2e1d6; --suave:#c4a393;
+    --blush:#3a1f16; --trigo:#3c2619; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{--bg:#1d0e09; --card:#2a1710; --linha:#4a2c20; --texto:#f2e1d6; --suave:#c4a393; --blush:#3a1f16; --trigo:#3c2619; color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--texto);font:400 1.08rem/1.6 "Dosis",system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
+
+/* topo */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--vinho);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.marca{font:700 1.5rem "Cormorant Garamond",serif;text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;padding:8px 12px;border-radius:6px;font-weight:500}
+nav a:hover{background:rgba(255,255,255,.14)}
+.faixa{height:6px;background:linear-gradient(90deg,var(--verde) 33.3%,#f4efe9 33.3% 66.6%,var(--rubi) 66.6%)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr 1fr;min-height:min(78vh,620px);position:relative;color:#fff}
+.hero>span{display:block}
+.hero .v{background:radial-gradient(circle at 30% 30%,#3f8a4d,#1f4d2a)}
+.hero .b{background:radial-gradient(circle at 50% 40%,#f6f1ea,#cfc8bf)}
+.hero .r{background:radial-gradient(circle at 70% 30%,#c13a2e,#7d1a13)}
+.hero-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:22px}
+.hero h1{font-size:clamp(2.4rem,7.5vw,5.4rem);font-weight:700;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.55);max-width:14ch}
+.hero p{margin:0;font-size:1.25rem;max-width:34ch;text-shadow:0 2px 10px rgba(0,0,0,.6);font-weight:500}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid #fff;color:#fff;background:rgba(58,26,16,.55);backdrop-filter:blur(3px)}
+.btn.cheio{background:#fff;color:var(--vinho)}
+.btn:hover{transform:translateY(-2px)}
+
+section{padding:72px 0}
+h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--vinho);margin-bottom:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:var(--trigo)}}
+.lead{color:var(--suave);max-width:60ch;margin:0 0 32px}
+
+/* horários */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.turno{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:28px;border-top:6px solid var(--verde)}
+.turno.noite{border-top-color:var(--rubi)}
+.turno h3{font-size:2rem;color:var(--vinho)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .turno h3{color:var(--trigo)}}
+.hora{font:700 1.7rem "Dosis";margin:8px 0}
+.turno p{margin:0;color:var(--suave)}
+.dias{margin-top:22px;font-weight:700}
+
+/* ambiente */
+.ambiente{background:var(--blush)}
+.ambiente .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.ambiente ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.ambiente li{background:var(--card);border-left:5px solid var(--vinho);padding:14px 18px;border-radius:0 10px 10px 0}
+.ambiente li b{font-family:"Cormorant Garamond",serif;font-size:1.3rem;display:block}
+
+/* cardápio */
+.papel{background:var(--trigo);border-radius:6px;padding:clamp(22px,4vw,48px);outline:3px double rgba(90,42,28,.35);outline-offset:-14px;color:#4a2519}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{font:600 1.05rem "Dosis";padding:10px 20px;border-radius:8px;border:0;background:var(--blush);color:var(--vinho);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--vinho);color:#fff}
+.busca{width:100%;padding:12px 16px;font:inherit;border-radius:8px;border:2px solid rgba(90,42,28,.3);background:rgba(255,255,255,.7);color:#3a2219;margin-bottom:22px}
+#lista{display:grid;grid-template-columns:1fr 1fr;gap:6px 44px;margin:0;padding:0;list-style:none}
+#lista li{padding:9px 0;border-bottom:1px dashed rgba(90,42,28,.3)}
+#lista b{font:600 1.45rem/1.2 "Dancing Script",cursive;display:block}
+#lista span{font-size:.98rem;color:#5d382c}
+.vazio{grid-column:1/-1;padding:20px 0}
+.nota{margin:22px 0 0;font-size:.95rem;color:#5d382c}
+
+/* contato */
+.contato{background:var(--madeira);color:#f2e1d6}
+.contato h2{color:#fff}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.cols h3{font-size:1.6rem;color:var(--trigo);margin-bottom:6px}
+.cols p{margin:0 0 6px}
+.zap{display:inline-block;margin-top:10px;background:#25a244;color:#fff;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px}
+.zap:hover{background:#1e8a39}
+.links a{display:block;padding:4px 0}
+footer{background:#2a120b;color:#c4a393;text-align:center;padding:26px 20px;font-size:.95rem}
+
+@media (max-width:760px){
+  nav a{padding:8px 9px}
+  .marca{font-size:1.25rem}
+  .ambiente .wrap{grid-template-columns:1fr}
+  #lista{grid-template-columns:1fr}
+  section{padding:52px 0}
+}
+@media (max-width:520px){.bar{flex-direction:column;padding:8px 0;gap:2px}nav{justify-content:center}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="marca" href="#inicio">Trattoria do Sabor</a>
+    <nav aria-label="Principal">
+      <a href="#horarios">Horários</a>
+      <a href="#restaurante">Restaurante</a>
+      <a href="#cardapio">Pizzaria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+  <div class="faixa"></div>
+</header>
+
+<main>
+<div class="hero" id="inicio">
+  <span class="v"></span><span class="b"></span><span class="r"></span>
+  <div class="hero-txt">
+    <h1>O melhor rodízio de pizza de Canoas</h1>
+    <p>Buffet livre no almoço e rodízio de pizzas à noite, de segunda a sábado.</p>
+    <div class="btns">
+      <a class="btn cheio" href="https://wa.me/5551991065219" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn" href="#cardapio">Ver o cardápio</a>
+    </div>
+  </div>
+</div>
+
+<section id="horarios">
+  <div class="wrap">
+    <h2>Dois momentos, uma mesa farta</h2>
+    <p class="lead">Venha almoçar no buffet ou jantar no rodízio. Também temos espaço para eventos.</p>
+    <div class="duo">
+      <div class="turno">
+        <h3>Buffet livre</h3>
+        <div class="hora">11h às 15h</div>
+        <p>Variedade de pratos preparados com carinho: saladas, sopas, pratos quentes e muito mais.</p>
+      </div>
+      <div class="turno noite">
+        <h3>Rodízio de pizza</h3>
+        <div class="hora">19h às 23h</div>
+        <p>Sabor único. Só quem experimenta sabe! Salgadas e doces, saindo do forno o tempo todo.</p>
+      </div>
+    </div>
+    <p class="dias">Atendemos de segunda a sábado.</p>
+  </div>
+</section>
+
+<section class="ambiente" id="restaurante">
+  <div class="wrap">
+    <div>
+      <h2>Restaurante, pizzaria e local para eventos</h2>
+      <p class="lead">Um salão amplo, mesas bem postas e um buffet executivo montado todos os dias para você almoçar sem pressa.</p>
+    </div>
+    <ul>
+      <li><b>Buffet executivo</b>Saladas variadas, sopas, pães, feijoada e pratos do dia.</li>
+      <li><b>Rodízio de pizza</b>Mais de 60 sabores entre salgadas e doces.</li>
+      <li><b>Eventos</b>Espaço para confraternizações. Consulte pelo WhatsApp.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cardapio">
+  <div class="wrap">
+    <h2>Cardápio da pizzaria</h2>
+    <p class="lead">Todas as pizzas salgadas levam molho de tomate e mussarela. Procure pelo nome ou pelo ingrediente.</p>
+    <div class="papel">
+      <div class="tabs" role="tablist" aria-label="Tipo de pizza">
+        <button role="tab" id="t-s" aria-selected="true" data-t="s">Salgadas</button>
+        <button role="tab" id="t-d" aria-selected="false" data-t="d">Doces</button>
+      </div>
+      <input class="busca" id="q" type="search" placeholder="Buscar sabor ou ingrediente (ex.: catupiry)" aria-label="Buscar sabor ou ingrediente">
+      <ul id="lista" aria-live="polite"></ul>
+      <p class="nota">Consulte valores e disponibilidade pelo WhatsApp ou telefone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <h2>Venha nos visitar</h2>
+    <div class="cols">
+      <div>
+        <h3>Endereço</h3>
+        <p>Av. Boqueirão, 1712</p>
+        <p>Igara, Canoas/RS</p>
+        <a class="zap" style="background:var(--trigo);color:var(--vinho)" href="https://www.google.com/maps/search/?api=1&query=Av.+Boqueir%C3%A3o+1712+Canoas+RS" target="_blank" rel="noopener">Abrir no mapa</a>
+      </div>
+      <div>
+        <h3>Telefone e WhatsApp</h3>
+        <p><a href="tel:+555130597151">(51) 3059-7151</a></p>
+        <a class="zap" href="https://wa.me/5551991065219" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <div class="links">
+        <h3>Redes sociais</h3>
+        <a href="https://www.instagram.com/trattoriadosabor/" target="_blank" rel="noopener">Instagram @trattoriadosabor</a>
+        <a href="https://www.facebook.com/trattoriadosabor" target="_blank" rel="noopener">Facebook /trattoriadosabor</a>
+        <p style="margin-top:10px">Promoções divulgadas no Instagram e no Facebook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Trattoria do Sabor · Restaurante & Pizzaria · Todos os direitos reservados</footer>
+
+<script>
+var B="molho de tomate, mussarela, ";
+var S=("Alho e Óleo|alho, óleo e orégano;Ao Pesto|manjericão, alho, óleo e orégano;Atum|atum e orégano;Bacon|bacon e orégano;Baianinha|calabresa picante, pimentão, tomate e orégano;Basca|bacon, tomate, catupiry e orégano;Berinjela|berinjela frita salpicada com parmesão e orégano;Bolognesa|molho bolognesa, catupiry, batata palha e orégano;Brasileira|requeijão cremoso, presunto, azeitona e orégano;"+
+"Brócolis c/ Catupiry|brócolis refogado, catupiry e orégano;Caipira|frango, milho verde, queijo cheddar e orégano;Calabresa Acebolada|calabresa acebolada e orégano;Calabresa Picante|calabresa ao molho de pimenta e orégano;Calabresa|calabresa e orégano;Strogonoff de Frango|strogonoff de frango e batata palha;Suprema|pimentão e orégano;Tomates Secos c/ Rúcula|tomates secos e rúcula;Toscana|calabresa moída, parmesão e orégano;Vegetariana|palmito, ervilha, milho, catupiry e orégano;"+
+"Camarão|camarão e catupiry;Catupiry|catupiry e orégano;Cebolinha na Manteiga|cebola, manteiga e orégano;Champignon|presunto, champignon, azeitona e orégano;Cheddar|bacon, tomate, cheddar e orégano;Coração|coração, catupiry e orégano;Filé ao Molho Mostarda|filé ao molho mostarda e orégano;Frango c/ Catupiry|frango, catupiry e orégano;Frango Grelhado|frango, catupiry e orégano;Gauchinha|bacon, milho verde e orégano;"+
+"Italianinha|salame italiano, cebola, azeitona e orégano;Linguiça Toscana|linguiça toscana, tomate e orégano;Mafiosa|berinjela, calabresa picante, pimentão e orégano;Marquerita|manjericão, tomate, requeijão cremoso e orégano;Milho|milho, catupiry, azeitonas e orégano;Mussarela com Azeitonas|catupiry, azeitonas e orégano;Veronezi|tomate seco, manjericão fresco e orégano;Mussarela|catupiry e orégano;Napolitana|tomate, parmesão, azeitona, provolone e orégano;Palmito|palmito, catupiry e orégano;"+
+"Picanha ao Molho Madeira|picanha ao molho madeira e orégano;Picanha|picanha e orégano;Portuguesa|presunto, ovo, pimentão, azeitona, cebola e orégano;Provolone|provolone e orégano;Quatro Queijos|cheddar, parmesão e orégano;Strogonoff de Carne|strogonoff de carne, batata palha e orégano;Saborosa|presunto, manjericão e orégano").split(";").map(function(x){var p=x.split("|");return [p[0],B+p[1]+"."]});
+var D=("Banana com Canela|queijo mussarela, bananas em rodelas e açúcar com canela;Beijinho|beijinho com cobertura de leite condensado;Bem Casado|chocolate preto com chocolate branco;Bombom|base de chocolate com cobertura de choc. preto Nestlé e choc. granulado;Charge|chocolate preto, ganache e amendoim;Chocolate Branco c/ Amendoim|base de chocolate branco e amendoins;Chocolate Branco c/ Confetes|base de chocolate branco e confetes;Chocolate Branco c/ Morangos|base de chocolate branco e morangos;Chocolate Preto c/ Confetes|base de chocolate preto e confetes;Chocolate Preto c/ Morangos|base de chocolate preto e morangos;Chocolate Preto|base de chocolate preto e chocolate ralado;Prestígio|coco, leite condensado e chocolate;Sorvete|base de chocolate e sorvete de creme;Trattoria Doce|chocolate preto, morango, kiwi e leite condensado").split(";").map(function(x){var p=x.split("|");return [p[0],p[1]+"."]});
+var tipo="s",ul=document.getElementById("lista"),q=document.getElementById("q");
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function draw(){
+  var t=norm(q.value.trim()),src=tipo==="s"?S:D,out=src.filter(function(i){return !t||norm(i[0]+" "+i[1]).indexOf(t)>-1});
+  ul.innerHTML=out.length?out.map(function(i){return "<li><b>"+i[0]+"</b><span>"+i[1]+"</span></li>"}).join(""):"<li class='vazio'>Nenhum sabor encontrado. Tente outro ingrediente.</li>";
+}
+document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){
+  tipo=b.dataset.t;document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected",x===b)});draw();
+})});
+q.addEventListener("input",draw);draw();
+</script>
+</body>
+</html>
